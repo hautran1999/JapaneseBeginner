@@ -1,0 +1,18 @@
+<%- include header %>
+<div>
+    <h1 style="text-align: center;font-size: 48px;font-family:Georgia,serif;">Remember</h1>
+</div>
+<div class="container bg-light" style="margin-top: 2.5%;">
+    <div class="row">
+        <div class="row alphabet container">
+            <% for(var i = 0; i< wordhiragana.length ; i++) {%>
+            <div class="border border-dark rounded text-center">
+                <h1><%= wordhiragana[i].word %></h1>
+                <p><%= wordhiragana[i].sub %></p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+            <%- include footer %>

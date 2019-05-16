@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Japanese Beginner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+
+    <script>
+        var modalLogIn = document.getElementById('LogIn');
+        var modalRegister = document.getElementById('Register');
+
+        window.onclick = function (event) {
+            if (event.target == modalLogIn) {
+                modalLogIn.style.display = "none";
+            }
+            else if (event.target == modalRegister) {
+                modalRegister.style.display = "none";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white top-navbar shadow p-3 mb-5 bg-white rounded"
+            data-toggle="sticky-onscroll">
+            <a class="navbar-brand Home" href="/home">Japanese Beginner</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barItem"
+                aria-controls="barItem" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="barItem">
+
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item Item">
+                        <a href="/home" class="nav-link">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown Item">
+                        <a class="nav-link dropdown-toggle" href="#" id="Learn" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Learn</a>
+
+                        <div class="dropdown-menu" aria-labelledby="Learn">
+                            <a class="dropdown-item" href="/learnhiragana">Learn Hiragana</a>
+                            <a class="dropdown-item" href="/learnkatakana">Learn Katakana</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item Item">
+                        <a href="/test" class="nav-link">Test</a>
+                    </li>
+
+                    <li class="nav-item Item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+
+                </ul>
+                <% if (member.length == 0) { %>
+                <div>
+                    <div class="row">
+                        <button class="btn btn-danger btn-block ButtonItem" type="button"
+                            onclick="document.getElementById('LogIn').style.display='block'"><span><i
+                                    class="fa fa-user-o"></i></span> Log in
+                        </button>
+                        <div id="LogIn" class="modalLogIn">
+
+                            <form action="/home" method="POST">
+                                <div class="animate container ContainerLogIn bg-light">
+                                    <span onclick="document.getElementById('LogIn').style.display='none'" class="close"
+                                        title="Close Modal">&times;</span>
+
+                                    <div>
+                                        <h1 style="text-align: center;">Log In</h1>
+                                        <p style="text-align: center;">login here using your username and password
+                                        </p>
+                                    </div>
+
+                                    <div class="container">
+                                        <label for="username_login">Username</label>
+                                        <input type="text" name="username_login" class="form-control"
+                                            placeholder="Enter your email address" required>
+
+                                        <label for="password_login">Password</label>
+                                        <input type="password" name="password_login" class="form-control"
+                                            placeholder="Enter your password" required>
+
+                                        <button class="btn-block btn btn-danger"
+                                            style="margin-top: 10%;margin-bottom: 2.5%;">
+                                            LogIn
+                                        </button>
+
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                                        </label>
+
+                                        <div>
+                                            <span style="float: right;">Forgot <a href="#">password?</a></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <button class="btn btn-danger btn-block ButtonItem" type="button"
+                            onclick="document.getElementById('Register').style.display='block'"><span><i
+                                    class="fa fa-user-plus"></i></span> Register
+                        </button>
+                        <div id="Register" class="modalRegister">
+
+                            <form action="/" method="POST">
+
+                                <div class="animate container ContainerRegister bg-light">
+                                    <span onclick="document.getElementById('Register').style.display='none'"
+                                        class="close" title="Close Modal">&times;</span>
+
+                                    <div>
+                                        <h1 style="text-align: center;">Register</h1>
+                                        <p style="text-align: center;">Please fill in this form to create an account.
+                                        </p>
+                                    </div>
+
+                                    <div class="container">
+                                        <label for="User">Username</label>
+                                        <input type="text" name="username_signup" class="form-control"
+                                            placeholder="Enter your username" required>
+
+                                        <label for="User">Email</label>
+                                        <input type="text" name="email_signup" class="form-control"
+                                            placeholder="Enter your email" required>
+
+                                        <label for="Pass">Password</label>
+                                        <input type="password" name="password_signup" class="form-control"
+                                            placeholder="Enter your password" required>
+
+                                        <button class="btn-block btn btn-danger" type="submit"
+                                            style="margin-top: 10%;margin-bottom: 2.5%;">
+                                            Register
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                <% } else{%>
+                <div>
+                    <a href="/user" style="color:black">
+                        <h1 style="font-size: 25px;" class="user">
+                            <span><i class="fa fa-user-circle"></i></span> <%= member %>
+                        </h1>
+                    </a>
+                </div>
+                <%}%>
+            </div>
+        </nav>
+    </div>
+    <% if (message.length > 0) { %>
+                <div class="alert alert-danger col-sm-12">
+                    <button type="button" style="padding-top:10px" class="close" data-dismiss="alert"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div id="message"><%= message %></div>
+                </div>
+                <% }%>

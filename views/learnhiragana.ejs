@@ -1,0 +1,976 @@
+<%- include header %>
+<% if(data) { %>
+<% for(var i = 0; i< data.length ; i++) {%>
+<div class="modal" id=<%= data[i].word %>>
+    <div class="animate container Container bg-light">
+        <span onclick="document.getElementById('<%= data[i].word %>').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+
+        <form action="/learnhiragana" method="POST">
+            <div class="row">
+                <div style="-ms-flex: 80%;flex: 80%;margin-top: 5%;">
+                    <div class="border border-dark rounded text-center" style="width: 400px;height: 400px;">
+                        <% if(data[i].word.length==1){%>
+                        <input type="hidden" name="word_remember" value=<%= data[i].sub %>>
+                        <h1 style="font-size: 300px"><%= data[i].word %></h1>
+                        <%} else {%>
+                        <input type="hidden" name="word_remember" value=<%= data[i].sub %>>
+                        <h2 style="font-size: 150px;margin-top: 75px"><%= data[i].word %></h2>
+                        <%}%>
+                    </div>
+                </div>
+                <div style="-ms-flex: 20%;flex: 20%;margin-top: 5%;">
+                    <button class="btn-block btn btn-danger" type="button"
+                        onclick="document.getElementById('<%= data[i].id %>').play()">Sound</button>
+                        <button class="btn-block btn btn-info">Remember</button>
+                    </div>
+                </div>
+        </form>
+
+    </div>
+</div>
+<%}%>  <%}%>
+<div style="margin-top: 2.5%;">
+    <h1 style="text-align: center;font-size: 48px;font-family:Georgia,serif;">Hiragana</h1>
+</div>
+<div class="container bg-light" style="margin-top: 2.5%;">
+    <div class="row">
+
+        <div style="-ms-flex: 40%;flex: 40%;">
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('あ').style.display='block'">
+                    <h1>あ</h1>
+                    <p>a</p>
+                    <audio id="aa">
+                        <source src="sound/aa.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('い').style.display='block'">
+                    <h1>い</h1>
+                    <p>i</p>
+                    <audio id="ii">
+                        <source src="sound/ii.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('う').style.display='block'">
+                    <h1>う</h1>
+                    <p>u</p>
+                    <audio id="uu">
+                        <source src="sound/uu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('え').style.display='block'">
+                    <h1>え</h1>
+                    <p>e</p>
+                    <audio id="ee">
+                        <source src="sound/ee.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('お').style.display='block'">
+                    <h1>お</h1>
+                    <p>o</p>
+                    <audio id="oo">
+                        <source src="sound/oo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('か').style.display='block'">
+                    <h1>か</h1>
+                    <p>ka</p>
+                    <audio id="ka">
+                        <source src="sound/ka.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('き').style.display='block'">
+                    <h1>き</h1>
+                    <p>ki</p>
+                    <audio id="ki">
+                        <source src="sound/ki.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('く').style.display='block'">
+                    <h1>く</h1>
+                    <p>ku</p>
+                    <audio id="ku">
+                        <source src="sound/ku.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('け').style.display='block'">
+                    <h1>け</h1>
+                    <p>ke</p>
+                    <audio id="ke">
+                        <source src="sound/ke.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('こ').style.display='block'">
+                    <h1>こ</h1>
+                    <p>ko</p>
+                    <audio id="ko">
+                        <source src="sound/ko.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('さ').style.display='block'">
+                    <h1>さ</h1>
+                    <p>sa</p>
+                    <audio id="sa">
+                        <source src="sound/sa.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('し').style.display='block'">
+                    <h1>し</h1>
+                    <p>shi</p>
+                    <audio id="si">
+                        <source src="sound/si.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('す').style.display='block'">
+                    <h1>す</h1>
+                    <p>su</p>
+                    <audio id="su">
+                        <source src="sound/su.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('せ').style.display='block'">
+                    <h1>せ</h1>
+                    <p>se</p>
+                    <audio id="se">
+                        <source src="sound/se.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('そ').style.display='block'">
+                    <h1>そ</h1>
+                    <p>so</p>
+                    <audio id="so">
+                        <source src="sound/so.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('た').style.display='block'">
+                    <h1>た</h1>
+                    <p>ta</p>
+                    <audio id="ta">
+                        <source src="sound/ta.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ち').style.display='block'">
+                    <h1>ち</h1>
+                    <p>chi</p>
+                    <audio id="ti">
+                        <source src="sound/ti.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('つ').style.display='block'">
+                    <h1>つ</h1>
+                    <p>tsu</p>
+                    <audio id="tu">
+                        <source src="sound/tu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('て').style.display='block'">
+                    <h1>て</h1>
+                    <p>te</p>
+                    <audio id="te">
+                        <source src="sound/te.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('と').style.display='block'">
+                    <h1>と</h1>
+                    <p>to</p>
+                    <audio id="to">
+                        <source src="sound/to.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('な').style.display='block'">
+                    <h1>な</h1>
+                    <p>na</p>
+                    <audio id="na">
+                        <source src="sound/na.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('に').style.display='block'">
+                    <h1>に</h1>
+                    <p>ni</p>
+                    <audio id="ni">
+                        <source src="sound/ni.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぬ').style.display='block'">
+                    <h1>ぬ</h1>
+                    <p>nu</p>
+                    <audio id="nu">
+                        <source src="sound/nu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ね').style.display='block'">
+                    <h1>ね</h1>
+                    <p>ne</p>
+                    <audio id="ne">
+                        <source src="sound/ne.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('の').style.display='block'">
+                    <h1>の</h1>
+                    <p>no</p>
+                    <audio id="no">
+                        <source src="sound/no.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('は').style.display='block'">
+                    <h1>は</h1>
+                    <p>ha</p>
+                    <audio id="ha">
+                        <source src="sound/ha.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ひ').style.display='block'">
+                    <h1>ひ</h1>
+                    <p>hi</p>
+                    <audio id="hi">
+                        <source src="sound/hi.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ふ').style.display='block'">
+                    <h1>ふ</h1>
+                    <p>fu</p>
+                    <audio id="fu">
+                        <source src="sound/hu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('へ').style.display='block'">
+                    <h1>へ</h1>
+                    <p>he</p>
+                    <audio id="he">
+                        <source src="sound/he.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ほ').style.display='block'">
+                    <h1>ほ</h1>
+                    <p>ho</p>
+                    <audio id="ho">
+                        <source src="sound/ho.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ま').style.display='block'">
+                    <h1>ま</h1>
+                    <p>ma</p>
+                    <audio id="ma">
+                        <source src="sound/ma.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('み').style.display='block'">
+                    <h1>み</h1>
+                    <p>mi</p>
+                    <audio id="mi">
+                        <source src="sound/mi.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('む').style.display='block'">
+                    <h1>む</h1>
+                    <p>mu</p>
+                    <audio id="mu">
+                        <source src="sound/mu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('め').style.display='block'">
+                    <h1>め</h1>
+                    <p>me</p>
+                    <audio id="me">
+                        <source src="sound/me.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('も').style.display='block'">
+                    <h1>も</h1>
+                    <p>mo</p>
+                    <audio id="mo">
+                        <source src="sound/mo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('や').style.display='block'">
+                    <h1>や</h1>
+                    <p>ya</p>
+                    <audio id="ya">
+                        <source src="sound/ya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="bg-light">
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ゆ').style.display='block'">
+                    <h1>ゆ</h1>
+                    <p>yu</p>
+                    <audio id="yu">
+                        <source src="sound/yu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="bg-light">
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('よ').style.display='block'">
+                    <h1>よ</h1>
+                    <p>yo</p>
+                    <audio id="yo">
+                        <source src="sound/yo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ら').style.display='block'">
+                    <h1>ら</h1>
+                    <p>ra</p>
+                    <audio id="ra">
+                        <source src="sound/ra.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('り').style.display='block'">
+                    <h1>り</h1>
+                    <p>ri</p>
+                    <audio id="ri">
+                        <source src="sound/ri.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('る').style.display='block'">
+                    <h1>る</h1>
+                    <p>ru</p>
+                    <audio id="ru">
+                        <source src="sound/ru.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('れ').style.display='block'">
+                    <h1>れ</h1>
+                    <p>re</p>
+                    <audio id="re">
+                        <source src="sound/re.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ろ').style.display='block'">
+                    <h1>ろ</h1>
+                    <p>ro</p>
+                    <audio id="ro">
+                        <source src="sound/ro.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('わ').style.display='block'">
+                    <h1>わ</h1>
+                    <p>wa</p>
+                    <audio id="wa">
+                        <source src="sound/wa.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="bg-light"></div>
+                <div class="bg-light"></div>
+                <div class="bg-light"></div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('を').style.display='block'">
+                    <h1>を</h1>
+                    <p>wo</p>
+                    <audio id="wo">
+                        <source src="sound/wo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ん').style.display='block'">
+                    <h1>ん</h1>
+                    <p>n</p>
+                    <audio id="nn">
+                        <source src="sound/nn.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="-ms-flex: 40%;flex: 40%">
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('が').style.display='block'">
+                    <h1>が</h1>
+                    <p>ga</p>
+                    <audio id="ga">
+                        <source src="sound/ga.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぎ').style.display='block'">
+                    <h1>ぎ</h1>
+                    <p>gi</p>
+                    <audio id="gi">
+                        <source src="sound/gi.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぐ').style.display='block'">
+                    <h1>ぐ</h1>
+                    <p>gu</p>
+                    <audio id="gu">
+                        <source src="sound/gu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('げ').style.display='block'">
+                    <h1>げ</h1>
+                    <p>ge</p>
+                    <audio id="ge">
+                        <source src="sound/ge.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ご').style.display='block'">
+                    <h1>ご</h1>
+                    <p>go</p>
+                    <audio id="go">
+                        <source src="sound/go.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ざ').style.display='block'">
+                    <h1>ざ</h1>
+                    <p>za</p>
+                    <audio id="za">
+                        <source src="sound/za.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('じ').style.display='block'">
+                    <h1>じ</h1>
+                    <p>ji</p>
+                    <audio id="ji">
+                        <source src="sound/ji.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ず').style.display='block'">
+                    <h1>ず</h1>
+                    <p>zu</p>
+                    <audio id="zu">
+                        <source src="sound/zu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぜ').style.display='block'">
+                    <h1>ぜ</h1>
+                    <p>ze</p>
+                    <audio id="ze">
+                        <source src="sound/ze.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぞ').style.display='block'">
+                    <h1>ぞ</h1>
+                    <p>zo</p>
+                    <audio id="zo">
+                        <source src="sound/zo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('だ').style.display='block'">
+                    <h1>だ</h1>
+                    <p>da</p>
+                    <audio id="da">
+                        <source src="sound/da.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぢ').style.display='block'">
+                    <h1>ぢ</h1>
+                    <p>ji</p>
+                    <audio id="ji2">
+                        <source src="sound/ji.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('づ').style.display='block'">
+                    <h1>づ</h1>
+                    <p>zu</p>
+                    <audio id="zu">
+                        <source src="sound/zu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('で').style.display='block'">
+                    <h1>で</h1>
+                    <p>de</p>
+                    <audio id="de">
+                        <source src="sound/de.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ど').style.display='block'">
+                    <h1>ど</h1>
+                    <p>do</p>
+                    <audio id="do">
+                        <source src="sound/do.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ば').style.display='block'">
+                    <h1>ば</h1>
+                    <p>ba</p>
+                    <audio id="ba">
+                        <source src="sound/ba.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('び').style.display='block'">
+                    <h1>び</h1>
+                    <p>bi</p>
+                    <audio id="bi">
+                        <source src="sound/bi.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぶ').style.display='block'">
+                    <h1>ぶ</h1>
+                    <p>bu</p>
+                    <audio id="bu">
+                        <source src="sound/bu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('べ').style.display='block'">
+                    <h1>べ</h1>
+                    <p>be</p>
+                    <audio id="be">
+                        <source src="sound/be.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぼ').style.display='block'">
+                    <h1>ぼ</h1>
+                    <p>bo</p>
+                    <audio id="bo">
+                        <source src="sound/bo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet">
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぱ').style.display='block'">
+                    <h1>ぱ</h1>
+                    <p>pa</p>
+                    <audio id="pa">
+                        <source src="sound/pa.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぴ').style.display='block'">
+                    <h1>ぴ</h1>
+                    <p>pi</p>
+                    <audio id="pi">
+                        <source src="sound/pi.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぷ').style.display='block'">
+                    <h1>ぷ</h1>
+                    <p>pu</p>
+                    <audio id="pu">
+                        <source src="sound/pu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぺ').style.display='block'">
+                    <h1>ぺ</h1>
+                    <p>pe</p>
+                    <audio id="pe">
+                        <source src="sound/pe.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center"
+                    onclick="document.getElementById('ぽ').style.display='block'">
+                    <h1>ぽ</h1>
+                    <p>po</p>
+                    <audio id="po">
+                        <source src="sound/po.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('きゃ').style.display='block'">
+                    <h2>きゃ</h2>
+                    <p>kya</p>
+                    <audio id="kya">
+                        <source src="sound/kya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('きゅ').style.display='block'">
+                    <h2>きゅ</h2>
+                    <p>kyu</p>
+                    <audio id="kyu">
+                        <source src="sound/kyu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('きょ').style.display='block'">
+                    <h2>きょ</h2>
+                    <p>kyo</p>
+                    <audio id="kyo">
+                        <source src="sound/kyo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('しゃ').style.display='block'">
+                    <h2>しゃ</h2>
+                    <p>sha</p>
+                    <audio id="sha">
+                        <source src="sound/sha.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('しゅ').style.display='block'">
+                    <h2>しゅ</h2>
+                    <p>shu</p>
+                    <audio id="shu">
+                        <source src="sound/shu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('しょ').style.display='block'">
+                    <h2>しょ</h2>
+                    <p>sho</p>
+                    <audio id="sho">
+                        <source src="sound/sho.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('ちゃ').style.display='block'">
+                    <h2>ちゃ</h2>
+                    <p>cha</p>
+                    <audio id="cha">
+                        <source src="sound/cha.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('ちゅ').style.display='block'">
+                    <h2>ちゅ</h2>
+                    <p>chu</p>
+                    <audio id="chu">
+                        <source src="sound/chu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('ちょ').style.display='block'">
+                    <h2>ちょ</h2>
+                    <p>cho</p>
+                    <audio id="cho">
+                        <source src="sound/cho.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('にゃ').style.display='block'">
+                    <h2>にゃ</h2>
+                    <p>nya</p>
+                    <audio id="nya">
+                        <source src="sound/nya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('にゅ').style.display='block'">
+                    <h2>にゅ</h2>
+                    <p>nyu</p>
+                    <audio id="nyu">
+                        <source src="sound/nyu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('にょ').style.display='block'">
+                    <h2>にょ</h2>
+                    <p>nyo</p>
+                    <audio id="nyo">
+                        <source src="sound/nyo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('ひゃ').style.display='block'">
+                    <h2>ひゃ</h2>
+                    <p>hya</p>
+                    <audio id="hya">
+                        <source src="sound/hya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('ひゅ').style.display='block'">
+                    <h2>ひゅ</h2>
+                    <p>hyu</p>
+                    <audio id="hyu">
+                        <source src="sound/hyu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('ひょ').style.display='block'">
+                    <h2>ひょ</h2>
+                    <p>hyo</p>
+                    <audio id="hyo">
+                        <source src="sound/hyo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('みゃ').style.display='block'">
+                    <h2>みゃ</h2>
+                    <p>mya</p>
+                    <audio id="mya">
+                        <source src="sound/mya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('みゅ').style.display='block'">
+                    <h2>みゅ</h2>
+                    <p>myu</p>
+                    <audio id="myu">
+                        <source src="sound/myu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('みょ').style.display='block'">
+                    <h2>みょ</h2>
+                    <p>myo</p>
+                    <audio id="myo">
+                        <source src="sound/myo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('りゃ').style.display='block'">
+                    <h2>りゃ</h2>
+                    <p>rya</p>
+                    <audio id="rya">
+                        <source src="sound/rya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('りゅ').style.display='block'">
+                    <h2>りゅ</h2>
+                    <p>ryu</p>
+                    <audio id="ryu">
+                        <source src="sound/ryu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('りょ').style.display='block'">
+                    <h2>りょ</h2>
+                    <p>ryo</p>
+                    <audio id="ryo">
+                        <source src="sound/ryo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('ぎゃ').style.display='block'">
+                    <h2>ぎゃ</h2>
+                    <p>gya</p>
+                    <audio id="gya">
+                        <source src="sound/gya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('ぎゅ').style.display='block'">
+                    <h2>ぎゅ</h2>
+                    <p>gyu</p>
+                    <audio id="gyu">
+                        <source src="sound/gyu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('ぎょ').style.display='block'">
+                    <h2>ぎょ</h2>
+                    <p>gyo</p>
+                    <audio id="gyo">
+                        <source src="sound/gyo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('じゃ').style.display='block'">
+                    <h2>じゃ</h2>
+                    <p>ja</p>
+                    <audio id="ja">
+                        <source src="sound/ja.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('じゅ').style.display='block'">
+                    <h2>じゅ</h2>
+                    <p>ju</p>
+                    <audio id="ju">
+                        <source src="sound/ju.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('じょ').style.display='block'">
+                    <h2>じょ</h2>
+                    <p>jo</p>
+                    <audio id="jo">
+                        <source src="sound/jo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('びゃ').style.display='block'">
+                    <h2>びゃ</h2>
+                    <p>bya</p>
+                    <audio id="bya">
+                        <source src="sound/bya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('びゅ').style.display='block'">
+                    <h2>びゅ</h2>
+                    <p>byu</p>
+                    <audio id="byu">
+                        <source src="sound/byu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('びょ').style.display='block'">
+                    <h2>びょ</h2>
+                    <p>byo</p>
+                    <audio id="byo">
+                        <source src="sound/byo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="row container alphabet2">
+                <div class="border border-dark rounded text-center" style="margin-right: 6%"
+                    onclick="document.getElementById('ぴゃ').style.display='block'">
+                    <h2>ぴゃ</h2>
+                    <p>pya</p>
+                    <audio id="pya">
+                        <source src="sound/pya.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 5% ;margin-right: 5%"
+                    onclick="document.getElementById('ぴゅ').style.display='block'">
+                    <h2>ぴゅ</h2>
+                    <p>pyu</p>
+                    <audio id="pyu">
+                        <source src="sound/pyu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="border border-dark rounded text-center" style="margin-left: 6%"
+                    onclick="document.getElementById('ぴょ').style.display='block'">
+                    <h2>ぴょ</h2>
+                    <p>pyo</p>
+                    <audio id="pyo">
+                        <source src="sound/pyo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+
+        </div>
+        <div style="-ms-flex: 20%;flex: 20%;">
+            <a href="#"><button class="container btn btn-block btn-danger" style="margin:2% 0 2% 0"
+                    type="button">Hiragana</button></a>
+            <a href="/learnkatakana"><button class="container btn btn-block btn-danger" style="margin:2% 0 2% 0"
+                    type="button">Katakana</button></a>
+        </div>
+    </div>
+</div>
+<%- include footer %>

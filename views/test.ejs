@@ -1,0 +1,658 @@
+<%- include header %>
+<% if(member.length==0){%>
+    <div class="alert alert-danger col-sm-12">
+        <button type="button" style="padding-top:10px" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div>You need to login to perform the function</div>
+    </div>
+<%}else{%>
+<main role="main">
+    <article id="quiz" class="quiz-intro">
+        <div id="quiz-bg"></div>
+        <section id="quiz-body">
+            <h1>Test</h1>
+            <button type="button" id="start-quiz-btn" class="btn blue-btn rounded-corners">Start</button>
+        </section>
+    </article>
+
+    <button type="button" id="shortcuts-info-btn">Keyboard shortcuts</button>
+
+    <aside class="shortcuts-info">
+        <p><span class="tag">Space</span> - start quiz / go to next question</p>
+        <p><span class="tag">1</span> - <span class="tag">4</span> - choose an answer</p>
+    </aside>
+</main>
+
+<audio id="aa">
+    <source src="sound/aa.mp3" type="audio/mpeg"></audio>
+<audio id="ii">
+    <source src="sound/ii.mp3" type="audio/mpeg"></audio>
+<audio id="uu">
+    <source src="sound/uu.mp3" type="audio/mpeg"></audio>
+<audio id="ee">
+    <source src="sound/ee.mp3" type="audio/mpeg"></audio>
+<audio id="oo">
+    <source src="sound/oo.mp3" type="audio/mpeg"></audio>
+<audio id="ka">
+    <source src="sound/ka.mp3" type="audio/mpeg"></audio>
+<audio id="ki">
+    <source src="sound/ki.mp3" type="audio/mpeg"></audio>
+<audio id="ku">
+    <source src="sound/ku.mp3" type="audio/mpeg"></audio>
+<audio id="ke">
+    <source src="sound/ke.mp3" type="audio/mpeg"></audio>
+<audio id="ko">
+    <source src="sound/ko.mp3" type="audio/mpeg"></audio>
+<audio id="sa">
+    <source src="sound/sa.mp3" type="audio/mpeg"></audio>
+<audio id="si">
+    <source src="sound/si.mp3" type="audio/mpeg"></audio>
+<audio id="su">
+    <source src="sound/su.mp3" type="audio/mpeg"></audio>
+<audio id="se">
+    <source src="sound/se.mp3" type="audio/mpeg"></audio>
+<audio id="so">
+    <source src="sound/so.mp3" type="audio/mpeg"></audio>
+
+<audio id="ta">
+    <source src="sound/ta.mp3" type="audio/mpeg">
+</audio>
+<audio id="ti">
+    <source src="sound/ti.mp3" type="audio/mpeg">
+</audio>
+<audio id="tu">
+    <source src="sound/tu.mp3" type="audio/mpeg">
+</audio>
+<audio id="te">
+    <source src="sound/te.mp3" type="audio/mpeg">
+</audio>
+<audio id="to">
+    <source src="sound/to.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="na">
+    <source src="sound/na.mp3" type="audio/mpeg">
+</audio>
+<audio id="ni">
+    <source src="sound/ni.mp3" type="audio/mpeg">
+</audio>
+<audio id="nu">
+    <source src="sound/nu.mp3" type="audio/mpeg">
+</audio>
+<audio id="ne">
+    <source src="sound/ne.mp3" type="audio/mpeg">
+</audio>
+<audio id="no">
+    <source src="sound/no.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ha">
+    <source src="sound/ha.mp3" type="audio/mpeg">
+</audio>
+<audio id="hi">
+    <source src="sound/hi.mp3" type="audio/mpeg">
+</audio>
+<audio id="fu">
+    <source src="sound/hu.mp3" type="audio/mpeg">
+</audio>
+<audio id="he">
+    <source src="sound/he.mp3" type="audio/mpeg">
+</audio>
+<audio id="ho">
+    <source src="sound/ho.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ma">
+    <source src="sound/ma.mp3" type="audio/mpeg">
+</audio>
+<audio id="mi">
+    <source src="sound/mi.mp3" type="audio/mpeg">
+</audio>
+<audio id="mu">
+    <source src="sound/mu.mp3" type="audio/mpeg">
+</audio>
+<audio id="me">
+    <source src="sound/me.mp3" type="audio/mpeg">
+</audio>
+<audio id="mo">
+    <source src="sound/mo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ya">
+    <source src="sound/ya.mp3" type="audio/mpeg">
+</audio>
+<audio id="yu">
+    <source src="sound/yu.mp3" type="audio/mpeg">
+</audio>
+<audio id="yo">
+    <source src="sound/yo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ra">
+    <source src="sound/ra.mp3" type="audio/mpeg">
+</audio>
+<audio id="ri">
+    <source src="sound/ri.mp3" type="audio/mpeg">
+</audio>
+<audio id="ru">
+    <source src="sound/ru.mp3" type="audio/mpeg">
+</audio>
+<audio id="re">
+    <source src="sound/re.mp3" type="audio/mpeg">
+</audio>
+<audio id="ro">
+    <source src="sound/ro.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="wa">
+    <source src="sound/wa.mp3" type="audio/mpeg">
+</audio>
+<audio id="wo">
+    <source src="sound/wo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="nn">
+    <source src="sound/nn.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ga">
+    <source src="sound/ga.mp3" type="audio/mpeg">
+</audio>
+<audio id="gi">
+    <source src="sound/gi.mp3" type="audio/mpeg">
+</audio>
+<audio id="gu">
+    <source src="sound/gu.mp3" type="audio/mpeg">
+</audio>
+<audio id="ge">
+    <source src="sound/ge.mp3" type="audio/mpeg">
+</audio>
+<audio id="go">
+    <source src="sound/go.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="za">
+    <source src="sound/za.mp3" type="audio/mpeg">
+</audio>
+<audio id="ji">
+    <source src="sound/ji.mp3" type="audio/mpeg">
+</audio>
+<audio id="zu">
+    <source src="sound/zu.mp3" type="audio/mpeg">
+</audio>
+<audio id="ze">
+    <source src="sound/ze.mp3" type="audio/mpeg">
+</audio>
+<audio id="zo">
+    <source src="sound/zo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="da">
+    <source src="sound/da.mp3" type="audio/mpeg">
+</audio>
+<audio id="ji2">
+    <source src="sound/ji.mp3" type="audio/mpeg">
+</audio>
+<audio id="zu">
+    <source src="sound/zu.mp3" type="audio/mpeg">
+</audio>
+<audio id="de">
+    <source src="sound/de.mp3" type="audio/mpeg">
+</audio>
+<audio id="do">
+    <source src="sound/do.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ba">
+    <source src="sound/ba.mp3" type="audio/mpeg">
+</audio>
+<audio id="bi">
+    <source src="sound/bi.mp3" type="audio/mpeg">
+</audio>
+<audio id="bu">
+    <source src="sound/bu.mp3" type="audio/mpeg">
+</audio>
+<audio id="be">
+    <source src="sound/be.mp3" type="audio/mpeg">
+</audio>
+<audio id="bo">
+    <source src="sound/bo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pa">
+    <source src="sound/pa.mp3" type="audio/mpeg">
+</audio>
+<audio id="pi">
+    <source src="sound/pi.mp3" type="audio/mpeg">
+</audio>
+<audio id="pu">
+    <source src="sound/pu.mp3" type="audio/mpeg">
+</audio>
+<audio id="pe">
+    <source src="sound/pe.mp3" type="audio/mpeg">
+</audio>
+<audio id="po">
+    <source src="sound/po.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="kya">
+    <source src="sound/kya.mp3" type="audio/mpeg">
+</audio>
+<audio id="kyu">
+    <source src="sound/kyu.mp3" type="audio/mpeg">
+</audio>
+<audio id="kyo">
+    <source src="sound/kyo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="sha">
+    <source src="sound/sha.mp3" type="audio/mpeg">
+</audio>
+<audio id="shu">
+    <source src="sound/shu.mp3" type="audio/mpeg">
+</audio>
+<audio id="sho">
+    <source src="sound/sho.mp3" type="audio/mpeg">
+</audio>
+<audio id="cha">
+    <source src="sound/cha.mp3" type="audio/mpeg">
+</audio>
+<audio id="chu">
+    <source src="sound/chu.mp3" type="audio/mpeg">
+</audio>
+<audio id="cho">
+    <source src="sound/cho.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="nya">
+    <source src="sound/nya.mp3" type="audio/mpeg">
+</audio>
+<audio id="nyu">
+    <source src="sound/nyu.mp3" type="audio/mpeg">
+</audio>
+<audio id="nyo">
+    <source src="sound/nyo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="hya">
+    <source src="sound/hya.mp3" type="audio/mpeg">
+</audio>
+<audio id="hyu">
+    <source src="sound/hyu.mp3" type="audio/mpeg">
+</audio>
+<audio id="hyo">
+    <source src="sound/hyo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="mya">
+    <source src="sound/mya.mp3" type="audio/mpeg">
+</audio>
+<audio id="myu">
+    <source src="sound/myu.mp3" type="audio/mpeg">
+</audio>
+<audio id="myo">
+    <source src="sound/myo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="rya">
+    <source src="sound/rya.mp3" type="audio/mpeg">
+</audio>
+<audio id="ryu">
+    <source src="sound/ryu.mp3" type="audio/mpeg">
+</audio>
+<audio id="ryo">
+    <source src="sound/ryo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gya">
+    <source src="sound/gya.mp3" type="audio/mpeg">
+</audio>
+<audio id="gyu">
+    <source src="sound/gyu.mp3" type="audio/mpeg">
+</audio>
+<audio id="gyo">
+    <source src="sound/gyo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ja">
+    <source src="sound/ja.mp3" type="audio/mpeg">
+</audio>
+<audio id="ju">
+    <source src="sound/ju.mp3" type="audio/mpeg">
+</audio>
+<audio id="jo">
+    <source src="sound/jo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bya">
+    <source src="sound/bya.mp3" type="audio/mpeg">
+</audio>
+<audio id="byu">
+    <source src="sound/byu.mp3" type="audio/mpeg">
+</audio>
+<audio id="byo">
+    <source src="sound/byo.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pya">
+    <source src="sound/pya.mp3" type="audio/mpeg">
+</audio>
+<audio id="pyu">
+    <source src="sound/pyu.mp3" type="audio/mpeg">
+</audio>
+<audio id="pyo">
+    <source src="sound/pyo.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    (function () {
+        let questions = [];
+        var data = [
+            { word: "あ", kata: "ア", sub: "a", id: "aa" }, { word: "い", kata: "イ", sub: "i", id: "ii" }, { word: "う", kata: "ウ", sub: "u", id: "uu" }, { word: "え", kata: "エ", sub: "e", id: "ee" }, { word: "お", kata: "オ", sub: "o", id: "oo" },
+            { word: "か", kata: "カ", sub: "ka", id: "ka" }, { word: "き", kata: "キ", sub: "ki", id: "ki" }, { word: "く", kata: "ク", sub: "ku", id: "ku" }, { word: "け", kata: "ケ", sub: "ke", id: "ke" }, { word: "こ", kata: "コ", sub: "ko", id: "ko" },
+            { word: "さ", kata: "サ", sub: "sa", id: "sa" }, { word: "し", kata: "シ", sub: "shi", id: "si" }, { word: "す", kata: "ス", sub: "su", id: "su" }, { word: "せ", kata: "セ", sub: "se", id: "se" }, { word: "そ", kata: "ソ", sub: "so", id: "so" },
+            { word: "た", kata: "タ", sub: "ta", id: "ta" }, { word: "ち", kata: "チ", sub: "chi", id: "ti" }, { word: "つ", kata: "ツ", sub: "tsu", id: "tu" }, { word: "て", kata: "テ", sub: "te", id: "te" }, { word: "と", kata: "ト", sub: "to", id: "to" },
+            { word: "な", kata: "ナ", sub: "na", id: "na" }, { word: "に", kata: "二", sub: "ni", id: "ni" }, { word: "ぬ", kata: "ヌ", sub: "nu", id: "nu" }, { word: "ね", kata: "ネ", sub: "ne", id: "ne" }, { word: "の", kata: "ノ", sub: "no", id: "no" },
+            { word: "は", kata: "ハ", sub: "ha", id: "ha" }, { word: "ひ", kata: "ヒ", sub: "hi", id: "hi" }, { word: "ふ", kata: "フ", sub: "fu", id: "fu" }, { word: "へ", kata: "ヘ", sub: "he", id: "he" }, { word: "ほ", kata: "ホ", sub: "ho", id: "ho" },
+            { word: "ま", kata: "マ", sub: "ma", id: "ma" }, { word: "み", kata: "ミ", sub: "mi", id: "mi" }, { word: "む", kata: "ム", sub: "mu", id: "mu" }, { word: "め", kata: "メ", sub: "me", id: "me" }, { word: "も", kata: "モ", sub: "mo", id: "mo" },
+            { word: "や", kata: "ヤ", sub: "ya", id: "ya" }, { word: "ゆ", kata: "ユ", sub: "yu", id: "yu" }, { word: "よ", kata: "ユ", sub: "yo", id: "yo" },
+            { word: "ら", kata: "ラ", sub: "ra", id: "ra" }, { word: "り", kata: "リ", sub: "ri", id: "ri" }, { word: "る", kata: "ル", sub: "ru", id: "ru" }, { word: "れ", kata: "レ", sub: "re", id: "re" }, { word: "ろ", kata: "ロ", sub: "ro", id: "ro" },
+            { word: "わ", kata: "ワ", sub: "wa", id: "wa" }, { word: "を", kata: "ヲ", sub: "wo", id: "wo" },
+            { word: "ん", kata: "ン", sub: "nn", id: "nn" },
+            { word: "が", kata: "ガ", sub: "ga", id: "ga" }, { word: "ぎ", kata: "ギ", sub: "gi", id: "gi" }, { word: "ぐ", kata: "グ", sub: "gu", id: "gu" }, { word: "げ", kata: "ゲ", sub: "ge", id: "ge" }, { word: "ご", kata: "ゴ", sub: "go", id: "go" },
+            { word: "ざ", kata: "ザ", sub: "za", id: "za" }, { word: "じ", kata: "ジ", sub: "ji", id: "ji" }, { word: "ず", kata: "ズ", sub: "zu", id: "zu" }, { word: "ぜ", kata: "ゼ", sub: "ze", id: "ze" }, { word: "ぞ", kata: "ゾ", sub: "zo", id: "zo" },
+            { word: "だ", kata: "ダ", sub: "da", id: "da" }, { word: "ぢ", kata: "ヂ", sub: "ji", id: "ji2" }, { word: "づ", kata: "ヅ", sub: "zu", id: "zu" }, { word: "で", kata: "デ", sub: "de", id: "de" }, { word: "ど", kata: "ド", sub: "do", id: "do" },
+            { word: "ば", kata: "バ", sub: "ba", id: "ba" }, { word: "び", kata: "ビ", sub: "bi", id: "bi" }, { word: "ぶ", kata: "ブ", sub: "bu", id: "bu" }, { word: "べ", kata: "ベ", sub: "be", id: "be" }, { word: "ぼ", kata: "ボ", sub: "bo", id: "bo" },
+            { word: "ぱ", kata: "パ", sub: "pa", id: "pa" }, { word: "ぴ", kata: "ピ", sub: "pi", id: "pi" }, { word: "ぷ", kata: "プ", sub: "pu", id: "pu" }, { word: "ぺ", kata: "ペ", sub: "pe", id: "pe" }, { word: "ぽ", kata: "ポ", sub: "po", id: "po" },
+            { word: "きゃ", kata: "キャ", sub: "kya", id: "kya" }, { word: "きゅ", kata: "キュ", sub: "kyu", id: "kyu" }, { word: "きょ", kata: "キョ", sub: "kyo", id: "kyo" },
+            { word: "しゃ", kata: "シャ", sub: "sha", id: "sha" }, { word: "しゅ", kata: "シュ", sub: "shu", id: "shu" }, { word: "しょ", kata: "ショ", sub: "sho", id: "sho" },
+            { word: "ちゃ", kata: "チャ", sub: "cha", id: "cha" }, { word: "ちゅ", kata: "チュ", sub: "chu", id: "chu" }, { word: "ちょ", kata: "チョ", sub: "cho", id: "cho" },
+            { word: "にゃ", kata: "ニャ", sub: "nya", id: "nya" }, { word: "にゅ", kata: "ニュ", sub: "nyu", id: "nyu" }, { word: "にょ", kata: "ニョ", sub: "nyo", id: "nyo" },
+            { word: "ひゃ", kata: "ヒャ", sub: "hya", id: "hya" }, { word: "ひゅ", kata: "ヒュ", sub: "hyu", id: "hyu" }, { word: "ひょ", kata: "ヒョ", sub: "hyo", id: "hyo" },
+            { word: "みゃ", kata: "ミャ", sub: "mya", id: "mya" }, { word: "みゅ", kata: "ミュ", sub: "myu", id: "myu" }, { word: "みょ", kata: "ミョ", sub: "myo", id: "myo" },
+            { word: "りゃ", kata: "リャ", sub: "rya", id: "rya" }, { word: "りゅ", kata: "リュ", sub: "ryu", id: "ryu" }, { word: "りょ", kata: "リョ", sub: "ryo", id: "ryo" },
+            { word: "ぎゃ", kata: "ギャ", sub: "gya", id: "gya" }, { word: "ぎゅ", kata: "ギュ", sub: "gyu", id: "gyu" }, { word: "ぎょ", kata: "ギョ", sub: "gyo", id: "gyo" },
+            { word: "じゃ", kata: "ジャ", sub: "ja", id: "ja" }, { word: "じゅ", kata: "ジュ", sub: "ju", id: "ju" }, { word: "じょ", kata: "ジョ", sub: "jo", id: "jo" },
+            { word: "びゃ", kata: "ビャ", sub: "bya", id: "bya" }, { word: "びゅ", kata: "ビュ", sub: "byu", id: "byu" }, { word: "びょ", kata: "ビョ", sub: "byo", id: "byo" },
+            { word: "ぴゃ", kata: "ピャ", sub: "pya", id: "pya" }, { word: "ぴゅ", kata: "ピュ", sub: "pyu", id: "pyu" }, { word: "ぴょ", kata: "ピョ", sub: "pyo", id: "pyo" }
+        ];
+        function quest1() {
+            a = []; n = [];
+            for (i = 0; i < data.length; i++) n.push(i);
+            for (i = 0; i < 4; i++) {
+                var x = Math.floor(Math.random() * n.length); a.push(n[x]);
+                if (x == 0) n.shift();
+                else n.splice(x, x);
+            }
+            x = Math.floor(Math.random() * 4);
+            ans = [];
+            for (i = 0; i < 4; i++) {
+                ans.push(data[a[i]].sub);
+            }
+            return { question: data[a[x]].word, answers: ans, correctAnswer: x + 1, id: data[a[x]].id };
+        }
+        function quest2() {
+            a = []; n = [];
+            for (i = 0; i < data.length; i++) n.push(i);
+            for (i = 0; i < 4; i++) {
+                var x = Math.floor(Math.random() * n.length); a.push(n[x]);
+                if (x == 0) n.shift();
+                else n.splice(x, x);
+            }
+            x = Math.floor(Math.random() * 4);
+            ans = [];
+            for (i = 0; i < 4; i++) {
+                ans.push(data[a[i]].word);
+            }
+            return { question: data[a[x]].sub, answers: ans, correctAnswer: x + 1, id: data[a[x]].id };
+        }
+        function makeQuestion() {
+            for (let i = 0; i < 10; i++) {
+                n = Math.floor(Math.random() * 2);
+                if (n == 0) questions.push(quest1());
+                else questions.push(quest2());
+            }
+        }
+        makeQuestion();
+        let questionIndex,
+            currentQuestion,
+            score,
+            timeSpent,
+            quizTimer,
+            questionIsAnswered,
+            isQuizDone;
+        let quiz = document.getElementById("quiz");
+
+        function initQuiz() {
+            quiz.classList.remove("quiz-intro");
+            quiz.classList.add("quiz-started");
+
+            questionIndex = 0;
+            currentQuestion = 1;
+            questionIsAnswered = 0;
+            score = 0;
+            timeSpent = "00:00";
+
+            quiz.innerHTML = `<div id="progress-container"><span id="progress"></span></div>
+    <div id="stats">
+    <p>Question: <span id="questionNumber">${currentQuestion}/${
+                questions.length
+                }</span></p>
+    <p>Score: <span id="score">${score}</span></p>
+    <p>Time: <span id="timer">00:00</span></p>
+    </div>
+    <section id="answers"></section>`;
+
+            displayQuestion();
+            startTimer();
+        }
+
+        function displayQuestion() {
+            let question = questions[questionIndex];
+            let answers = document.getElementById("answers");
+            let answerNumber = 0;
+            let output = `<h2 class="text-center bold">${currentQuestion}. ${
+                question.question
+                }</h2>`;
+
+            for (let i in question.answers) {
+                answerNumber++;
+                output += `<div class="answer">
+      <input type="radio" id="answer-${answerNumber}" name="answers" value="${answerNumber}">
+      <label for="answer-${answerNumber}">
+      <span class="answer-number">${answerNumber}.</span> ${question.answers[i]}
+      </label>
+      </div>`;
+            }
+
+            answers.innerHTML = output;
+        }
+
+        function startTimer() {
+            let s = 0;
+            let m = 0;
+            let h = 0;
+            let seconds = 0;
+            let minutes = 0;
+            let hours = 0;
+            let timer = document.getElementById("timer");
+
+            quizTimer = setInterval(function () {
+                s++;
+                if (s > 59) { s = 0; m++; seconds = "0" + s; }
+                if (m > 59) { m = 0; h++; minutes = "00"; }
+                seconds = s > 9 ? s : "0" + s;
+                minutes = m > 9 ? m : "0" + m;
+                hours = h > 9 ? h : "0" + h;
+
+                timeSpent = h
+                    ? hours + ":" + minutes + ":" + seconds
+                    : minutes + ":" + seconds;
+                timer.textContent = timeSpent;
+            }, 1000);
+        }
+
+        function displayResults() {
+            let notification = document.getElementById("notification");
+            notification.parentElement.removeChild(notification);
+            quizTimer = null;
+            isQuizDone = 1;
+
+            let pageURL = window.location.href;
+            let shareText = `I just finished this quiz and got ${score} out of ${
+                questions.length
+                } questions right.`;
+
+
+            quiz.innerHTML = `<section id="results" class="text-center">
+    <h2 class="bold">Here are your results:</h2>
+    <p id="percentage">${scorePercentage()}%</p>
+    <p>You got <span class="bold">${score}</span> out of <span class="bold">${
+                questions.length
+                }</span> questions.</p>
+    <p style="margin-top: 10px;">Time spent: <span class="bold">${timeSpent}</span></p>
+
+    <a href = "/test"><button type="button" id="start-over-btn" class="btn blue-btn">Start over</button><a>
+    </section>`;
+        }
+
+        function goToNextQuestion() {
+            currentQuestion++;
+            questionIndex++;
+            questionIsAnswered = 0;
+
+            let notification = document.getElementById("notification");
+            notification.parentElement.removeChild(notification);
+
+            let questionNumber = document.getElementById("questionNumber");
+            questionNumber.textContent = `${currentQuestion}/${questions.length}`;
+
+            displayQuestion();
+        }
+
+        function submitAnswer(e) {
+            let selectedAnswer = Number(e.target.value);
+            let rightAnswer = questions[questionIndex].correctAnswer;
+            let idSound = questions[questionIndex].id;
+            let answers = document.getElementsByName("answers");
+            let progress = document.getElementById("progress");
+
+            questionIsAnswered = 1;
+
+            progress.style.width = progressPercentage() + "%";
+
+            let notification = document.createElement("div");
+            let message = document.createElement("p");
+            let label = e.target.nextElementSibling;
+            notification.id = "notification";
+
+            if (selectedAnswer === rightAnswer) {
+                score++;
+                message.textContent = "Right answer!";
+                label.classList.add("green-bg");
+                document.getElementById(idSound).play();
+            } else {
+                message.textContent = "Wrong answer!";
+                label.classList.add("red-bg");
+
+                answers.forEach(answer => {
+                    if (Number(answer.value) !== rightAnswer) return;
+
+                    answer.nextElementSibling.classList.add("green-bg");
+                });
+            }
+
+            let button = document.createElement("button");
+            button.classList.add("blue-btn");
+
+            if (isLastQuestion()) {
+                button.id = "show-results-btn";
+                button.textContent = "Show results";
+                clearInterval(quizTimer);
+                quizTimer = null;
+            } else {
+                button.id = "next-btn";
+                button.textContent = "Continue";
+            }
+
+            notification.appendChild(message);
+            notification.appendChild(button);
+            quiz.insertAdjacentElement("afterend", notification);
+
+            button.focus();
+
+            answers.forEach(answer => (answer.disabled = "disabled"));
+
+            document.getElementById("score").textContent = score;
+        }
+
+        let scorePercentage = () => (score / questions.length * 100).toFixed(0);
+        let progressPercentage = () =>
+            (currentQuestion / questions.length * 100).toFixed(0);
+        let isLastQuestion = () => currentQuestion === questions.length;
+
+        function spaceBarHandler() {
+            if (document.querySelector(".quiz-intro")) {
+                initQuiz();
+            }
+
+            if (questionIsAnswered && quizTimer) {
+                goToNextQuestion();
+            }
+
+            if (!quizTimer && !isQuizDone) {
+                displayResults();
+                console.log("last");
+            }
+        }
+
+        function numericKeyHandler(e) {
+            let answers = document.getElementsByName("answers");
+
+            answers.forEach(answer => {
+                if (answer.value === e.key) {
+                    if (questionIsAnswered) return;
+
+                    answer.checked = "checked";
+
+                    let event = new Event("change");
+                    answer.dispatchEvent(event);
+                    submitAnswer(event);
+
+                    questionIsAnswered = 1;
+                }
+            });
+        }
+
+        document.addEventListener("click", function (e) {
+            if (
+                e.target.matches("#start-quiz-btn") ||
+                e.target.matches("#start-over-btn")
+            )
+                initQuiz();
+            if (e.target.matches("#next-btn")) goToNextQuestion();
+            if (e.target.matches("#show-results-btn")) displayResults();
+        });
+
+        document.addEventListener("change", function (e) {
+            if (e.target.matches('input[type="radio"]')) submitAnswer(e);
+        });
+
+        document.addEventListener("keyup", function (e) {
+            if (e.keyCode === 32) spaceBarHandler();
+            if (e.keyCode >= 48 && e.keyCode <= 57) numericKeyHandler(e);
+        });
+
+        document
+            .getElementById("shortcuts-info-btn")
+            .addEventListener("click", function () {
+                let info = document.querySelector(".shortcuts-info");
+                info.classList.toggle("display-block");
+            });
+    })();
+
+</script>
+<%}%>
+<%- include footer %>
